@@ -4,7 +4,9 @@ Extensão para o Opencart alterar a utilização da classe Mail padrão para o P
 
 ## Instalação:
 
-Baixe o arquivo, compacte como cache-phpmailer.ocmod.zip
+Baixe o arquivo, cache-phpmailer.ocmod.zip
+
+https://github.com/davidchc/change-phpmailer/releases/tag/v1.0
 
 Depois pelo admin do OpenCart, indo em instalador, e enviar o arquivo.
 
