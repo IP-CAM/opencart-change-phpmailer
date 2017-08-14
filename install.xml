@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Alterar Mail Padrao pelo PHPMailer</name>
+  <code>change-phpmailer</code>
+  <version>1.0</version>
+  <author>David CHC</author>
+  <link>https://www.davidchc.com.br</link>
+  <file path="system/library/mail.php">
+	<operation>
+      <search>
+        <![CDATA[$boundary = '----=_NextPart_' . md5(time());]]>
+      </search>
+      <add position="before">
+        <![CDATA[
+			include_once DIR_SYSTEM.'vendor/PHPMailer/PHPMailerAutoload.php';
+			$mail = new PHPMailer;
+			$mail->CharSet = 'utf-8';
+			if($this->protocol == 'smtp') {
+				$mail->isSMTP();                        
+				$mail->Host = $this->smtp_hostname; 
+				$mail->SMTPAuth = true; 
+				$mail->Username = $this->smtp_username; 
+				$mail->Password = $this->smtp_password;
+				$mail->Port = $this->smtp_port;
+			}
+			$mail->setFrom($this->from, $this->sender);
+			if (is_array($this->to)) {
+				foreach(explode(',', $this->to) as $to) {
+					 $mail->addAddress($to); 
+				}			
+			} else {
+			  $mail->addAddress($this->to); 
+			}
+			
+			 
+			$mail->Subject = $this->subject;
+			if($this->text) {
+			   $mail->AltBody = $this->text;
+			}			
+			if($this->html) {
+				$mail->Body = $this->html;
+				$mail->isHTML(true);
+			}else{
+				$mail->Body = $this->text;
+			}
+			return $mail->send();
+			
+			
+		]]>
+      </add>
+    </operation>
+  </file>
+</modification>
