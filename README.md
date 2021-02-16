@@ -1,18 +1,18 @@
-# Extensão para Opencart - Change Phpmailer
+# Extension for Opencart - Change Phpmailer
 
-Extensão para o Opencart alterar a utilização da classe Mail padrão para o PHPMailer
+Extension for Opencart to change the use of the standard Mail class for PHPMailer
 
-## Instalação:
+## Installation:
 
-Baixe o arquivo, cache-phpmailer.ocmod.zip
+Download the file, cache-phpmailer.ocmod.zip
 
 https://github.com/davidchc/change-phpmailer/releases/tag/v1.0
 
-Depois pelo admin do OpenCart, indo em instalador, e enviar o arquivo.
+Then by the OpenCart admin, going to installer, and send the file.
 
-Após, vá em modificação, e atualize.
+After, go to modification, and update.
 
-## Observação:
+## Observation:
 
-A versão utilizada para teste foi a **2.3.0.2**
+The version used for testing was ** 2.3.0.2 ** 
 
